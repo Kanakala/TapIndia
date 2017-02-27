@@ -1,0 +1,1 @@
+hi, {{user}} your account will be expired in expiration_days with activation_key 

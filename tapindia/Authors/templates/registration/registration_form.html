@@ -1,0 +1,124 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<!DOCTYPE HTML>
+<!--
+	Tapestry by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>TapIndia</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{%static 'js/skel.min.js'%}"></script>
+		<script src="{%static 'js/skel-panels.min.js'%}"></script>
+		<script src="{%static 'js/init.js'%}"></script>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+		<link rel="stylesheet" href="{%static 'css/registration.css'%}">	
+		
+			<link rel="stylesheet" href="{%static 'css/style.css'%}" />
+		
+		
+	</head>
+	<body class="homepage">
+		<div id="header-wrapper">
+			<div class="container">
+				<div id="header">
+					<div id="logo">
+						<h1><a href="index.html">TapIndia</a></h1>
+						
+					</div>
+					<nav id="nav">
+						<ul>
+							<li class="current_page_item"><a href="index.html">Home</a></li>
+							
+							<li><a href="registration.html">Login</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		
+		<body>
+		<!-- registration/login -->
+		
+		  <div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#registration">Sign Up</a></li>
+        <li><a href="/accounts/login/">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="registration">   
+        
+       
+          <form action="" method="post">{% csrf_token %}
+ {% if form.errors %}
+  <p class="errors">Please correct the errors below: {{ form.non_field_errors }}</p>
+  {% endif %}
+    <div class="accounttype">
+	 {% if form.Label.errors %}
+        <p class="errors">{{ form.Label.errors.as_text }}</p>
+      {% endif %}
+	
+      {%render_field form.Label %}
+    </div>
+       <br />
+          
+            <div class="field-wrap">
+              
+			  {% if form.username.errors %}
+        <p class="errors">{{ form.username.errors.as_text }}</p>
+      {% endif %}
+             {%render_field form.username placeholder=form.username.label autocomplete=on%}
+            </div>
+        
+            
+
+          <div class="field-wrap">
+            
+			{% if form.email.errors %}
+        <p class="errors">{{ form.email.errors.as_text }}</p>
+      {% endif %}
+            {%render_field form.email placeholder=form.email.label%}
+          </div>
+		  
+          <div class="top-row">
+          <div class="field-wrap">
+           
+            {%render_field form.password1 placeholder=form.password1.label%}
+          </div>
+		  <div class="field-wrap">
+           
+            {%render_field form.password2 placeholder=form.password2.label%}
+          </div>
+		   </div>
+         
+          <button type="submit" value="Register &rarr;" class="button button-block"/>Get Started</button>
+          
+          </form>
+
+        </div>
+        
+        
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
+		  
+		<div id="copyright" class="container">
+			© Copyright @ 2016 TapIndia Pvt Ltd. All Right Reserved.
+		</div>
+	</body>
+</html>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+      <script src="{%static 'js/registration.js'%}"></script>

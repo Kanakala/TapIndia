@@ -1,0 +1,151 @@
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+<!DOCTYPE HTML>
+<!--
+	Tapestry by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>TapIndia</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Oswald:400,300" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="{%static 'js/skel.min.js'%}"></script>
+		
+		<script src="{%static 'js/init.js'%}"></script>
+		
+		
+		
+			<link rel="stylesheet" href="{%static 'css/skel-noscript.css'%}" />
+			<link rel="stylesheet" href="{%static 'css/style.css'%}" />
+			<link rel="stylesheet" href="{%static 'css/style-desktop.css'%}" />
+			
+	
+			
+		
+		
+		
+	</head>
+	<body class="homepage">
+		<div id="header-wrapper">
+			<div class="container">
+				<div id="header">
+					<div id="logo">
+						<h1><a href="#">TapIndia</a></h1>
+						
+					</div>
+					<nav id="nav">
+						<ul>
+							<li class="current_page_item"><a href="index.html">Home</a></li>
+							<li><a href="threecolumn.html">Companies</a></li>
+							<li><a href="twocolumn1.html">Markets</a></li>
+							<li><a href="twocolumn2.html">Politics</a></li>
+							<li><a href="onecolumn.html">Regions</a></li>
+							<li><a href="registration.html">Login</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<br /><br />
+		
+		<div class="container" id="marketing">
+				<div class="row">
+				<div class="3u"  >
+				<div align ="center" >
+						<div  class="image round">
+						
+						<p><a href="#"><img src="{%static 'images/pic05.png'%}" alt="profile-sample4" class="profile" ></a></p>
+						</div>
+						</div>
+						</div>
+						
+					
+						<div class="9u">
+						<section>
+						<div id="profile">
+						<h2><strong>Sumanth Kanakala</strong></h2><br /><br />
+						<div class="row"><div class="2u">
+						<h4>PUBLISHED ARTICLES</h4></div>
+						<div class="2u">
+						<h4>BEING EDITED</h4></div>
+						<div class="2u">
+						<h4>CURRENT DRAFT</h4></div>
+						</div>
+						</section>
+						</div>
+						</div>
+						</div></div>
+		<form class="nomargin" method='POST' action="" enctype='multipart/form-data'>{% csrf_token %}
+		<div class="container" id="marketing">
+		<div class="row">
+		<div class="9u">&nbsp;</div>
+			<div class="3u">			
+			<div id="profile">
+			<div class="" style="width:100%;">
+				<h4>Article category</h4>
+			{%render_field form.Category placeholder=form.Category.label list="categories"  %}
+			<datalist id="categories">
+		 <select name ="categories">
+		  <option value="Companies">
+		  <option value="Currencies">
+		  <option value="Commodities">
+		  <option value="Global Economy">
+		  <option value="Mergers & Acquisitions">
+		  <option value="Politics">
+		  <option value="Start Ups">
+		  </select>
+		</datalist></div>
+			</div></div></div>	</div>
+			<div class="container" id="marketing"><div class="row">
+		<div class="12u">
+		<div style=" padding-top:15px;">
+		{%render_field form.Headline placeholder=form.Headline.label %}
+			 </div> 
+			</div></div></div>
+			<div class="container" id="marketing"><div class="row">
+		<div class="12u">
+		<div style=" padding-top:15px;">
+		{{form.media}}
+		{{form.Body}}
+	
+
+			</div></div></div></div>
+			<br/><br/>
+			
+			<div class="container" id="marketing"><div class="row">
+		<div class="12u"><div id="profile"><h4><strong>Notes For The Editorial Team</strong></h4></div>
+		
+			{%render_field form.Notes placeholder=form.Notes.label %}
+			</div></div></div><br/><br/>
+			
+			<div class="container" id="marketing">
+			<div id="profile"><h4>
+			<div class="row">
+			<div class="1u">
+			{%render_field form.Confirm type="checkbox" %}</div><div class="11u"> I confirm that this article is my own and any sources used have been referenced within my article.</h4></div></div></div></div>
+			<div class="container" id="marketing"><div class="row">
+			<div class="8u">&nbsp;</div>
+			<div class="4u">
+			<button>SAVE AS DRAFT</button>&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="special" value="Submit" />
+				</div></div></div></form>
+		<br/><br/><br/><br/>
+		<div id="copyright" class="container">
+			© Copyright @ 2016 TapIndia Pvt Ltd. All Right Reserved.
+		</div>
+		
+
+	</body>
+	
+	
+		
+
+
+</html>
